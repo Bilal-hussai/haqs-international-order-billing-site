@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haq's International Billing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="logo">HI</div>
+          <div>
+            <p class="brand-title">Haq's International</p>
+            <p class="brand-subtitle">Order & Billing Desk</p>
+          </div>
+        </div>
+        <div class="search-area">
+          <label class="sr-only" for="productSearch">Search products</label>
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input
+              id="productSearch"
+              type="text"
+              placeholder="Search products to add in bill..."
+              autocomplete="off"
+            />
+          </div>
+          <div id="suggestions" class="suggestions" aria-live="polite"></div>
+        </div>
+        <div class="header-actions">
+          <div class="date" id="todayDate"></div>
+          <button class="btn btn-outline" id="printBtn" type="button">Print</button>
+          <button class="btn btn-primary" id="shareBtn" type="button">
+            Share on WhatsApp
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="bill-section">
+          <div class="bill-header">
+            <div>
+              <h2>Customer Bill</h2>
+              <p class="muted">
+                Add products from the search bar. Quantity & price can be adjusted.
+              </p>
+            </div>
+            <div class="total-card">
+              <span>Total Amount</span>
+              <strong id="grandTotal">PKR 0</strong>
+            </div>
+          </div>
+          <div class="bill-table">
+            <div class="bill-row bill-row--head">
+              <span>Item</span>
+              <span>Price (PKR)</span>
+              <span>Quantity</span>
+              <span>Line Total</span>
+              <span>Action</span>
+            </div>
+            <div id="billRows" class="bill-rows"></div>
+          </div>
+          <div class="empty-state" id="emptyState">
+            <p>No items yet. Start searching to build the bill.</p>
+          </div>
+        </section>
+        <aside class="info-panel">
+          <h3>Quick Tips</h3>
+          <ul>
+            <li>Search with any keyword to see suggestions.</li>
+            <li>Tap on a suggestion to add it instantly.</li>
+            <li>Adjust quantity or price before sharing.</li>
+          </ul>
+          <div class="whatsapp-card">
+            <p>WhatsApp Number</p>
+            <strong>+92 313 5964444</strong>
+            <span class="muted">Tap Share to send the bill summary.</span>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
